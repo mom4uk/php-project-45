@@ -1,0 +1,20 @@
+{
+    "name": "hexlet/code",
+    "description": "Php first project",
+    "autoload": {
+        "psr-4": {
+            "Manov\\PhpProject45\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mmanov",
+            "email": "yyy@gmail.com"
+        }
+    ],
+    "bin": [
+        "bin/brain-games"
+    ],
+    "license": "MIT",
+    "require": {}
+}
