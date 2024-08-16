@@ -4,7 +4,8 @@
     "autoload": {
         "psr-4": {
             "Manov\\PhpProject45\\": "src/"
-        }
+        },
+        "files": ["src/Cli.php"]
     },
     "authors": [
         {
@@ -16,5 +17,7 @@
         "bin/brain-games"
     ],
     "license": "MIT",
-    "require": {}
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.0"
+    }
 }

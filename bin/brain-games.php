@@ -1,2 +1,0 @@
-#!/usr/bin/env php
-Welcome to the Brain Games!
