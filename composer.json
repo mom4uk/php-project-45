@@ -5,7 +5,7 @@
         "psr-4": {
             "Manov\\PhpProject45\\": "src/"
         },
-        "files": ["src/Cli.php"]
+        "files": ["src/Cli.php", "src/general.php", "src/even.php"]
     },
     "authors": [
         {
@@ -14,7 +14,8 @@
         }
     ],
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "license": "MIT",
     "require": {
