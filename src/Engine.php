@@ -6,15 +6,17 @@ use function cli\line;
 use function cli\prompt;
 use function General\isEven;
 use function Games\Calculate\getTask as getTaskCalc;
-use function Games\Calculate\getAnswer;
+use function Games\Calculate\getAnswer as getCalcAnswer;
 use function Games\Gcd\getTask as getTaskGcd;
+use function Games\Progression\getTask as getProgTask;
+use function Games\Progression\getAnswer as getProgAnswer;
 
 function printQuestion(string $question)
 {
     line($question);
 }
 
-function makeExercise ($taskAndAnswer, $name, $counter)
+function doExercise ($taskAndAnswer, $name, $counter)
 {
     [$task, $correctAnswer] = $taskAndAnswer;
     $result = 0;
@@ -46,12 +48,16 @@ function getTaskAndAnswer ($gameFlag) {
                 return [$task, $answer];
             case 'calc':
                 $task = getTaskCalc();
-                $answer = getAnswer($task);
+                $answer = getCalcAnswer($task);
                 return [$task, $answer];
             case 'gcd':
                 [$firstNumber, $secondNubmer] = [mt_rand(1,20), mt_rand(1,20)];
                 $task = getTaskGcd($firstNumber, $secondNubmer);
                 $answer = gmp_gcd($firstNumber, $secondNubmer);
+                return [$task, $answer];
+            case 'prog':
+                $task = getProgTask();
+                $answer = getProgAnswer($task); 
                 return [$task, $answer];
             default:
                 line("Error: Incorrect game flag type: {$gameFlag}");
@@ -66,7 +72,7 @@ function engine($gameFlag, $question, $name)
     while($counter < 3) {
 
         $taskAndAnswer = getTaskAndAnswer($gameFlag);
-        $exercise = makeExercise($taskAndAnswer, $name, $counter);
+        $exercise = doExercise($taskAndAnswer, $name, $counter);
 
         if ($exercise === 0) {
             return;
