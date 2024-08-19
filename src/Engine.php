@@ -4,7 +4,7 @@ namespace Engine;
 
 use function cli\line;
 use function cli\prompt;
-use function General\isEven;
+use function Games\Even\isEven;
 use function Games\Calculate\getTask;
 use function Games\Calculate\getAnswer;
 
