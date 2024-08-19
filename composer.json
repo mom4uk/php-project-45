@@ -8,6 +8,7 @@
         "files": [
             "src/Cli.php",
             "src/Engine.php",
+            "src/General.php",
             "src/Games/Even.php",
             "src/Games/Calculate.php"
         ]
