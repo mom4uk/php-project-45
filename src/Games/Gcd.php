@@ -1,6 +1,6 @@
 <?php
 
-namespace Games\Even;
+namespace Games\Gcd;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
@@ -8,13 +8,18 @@ use function cli\line;
 use function cli\prompt;
 use function Engine\engine;
 
-function startEven()
+function getTask(int $firstNum, int $secondNum)
+{
+    return "{$firstNum} {$secondNum}";
+}
+
+function startGcd()
 {
     line('Welcome to the brain game!');
     $name = prompt('May i have your name?');
     line("hello, %s!", $name);
 
-    $question = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $question = 'Find the greatest common divisor of given numbers.';
 
-    engine('even', $question, $name);
+    engine('gcd', $question, $name);
 }

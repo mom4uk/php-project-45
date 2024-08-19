@@ -5,8 +5,9 @@ namespace Engine;
 use function cli\line;
 use function cli\prompt;
 use function General\isEven;
-use function Games\Calculate\getTask;
+use function Games\Calculate\getTask as getTaskCalc;
 use function Games\Calculate\getAnswer;
+use function Games\Gcd\getTask as getTaskGcd;
 
 function printQuestion(string $question)
 {
@@ -44,8 +45,13 @@ function getTaskAndAnswer ($gameFlag) {
                 $answer =  isEven($task) ? 'yes' : 'no';
                 return [$task, $answer];
             case 'calc':
-                $task = getTask();
+                $task = getTaskCalc();
                 $answer = getAnswer($task);
+                return [$task, $answer];
+            case 'gcd':
+                [$firstNumber, $secondNubmer] = [mt_rand(1,20), mt_rand(1,20)];
+                $task = getTaskGcd($firstNumber, $secondNubmer);
+                $answer = gmp_gcd($firstNumber, $secondNubmer);
                 return [$task, $answer];
             default:
                 line("Error: Incorrect game flag type: {$gameFlag}");

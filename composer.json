@@ -10,7 +10,8 @@
             "src/Engine.php",
             "src/General.php",
             "src/Games/Even.php",
-            "src/Games/Calculate.php"
+            "src/Games/Calculate.php",
+            "src/Games/Gcd.php"
         ]
     },
     "authors": [
