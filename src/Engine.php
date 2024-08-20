@@ -73,6 +73,7 @@ function getTaskAndAnswer($gameFlag)
 
 function play($gameFlag, $question)
 {
+    greeting();
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     printQuestion($question);
