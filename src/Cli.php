@@ -7,5 +7,6 @@ use function cli\prompt;
 
 function greeting()
 {
-    print_r('Welcome to the Brain Game!');
+    line('Welcome to the Brain Game!');
+    return;
 }
