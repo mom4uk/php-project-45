@@ -4,6 +4,7 @@ namespace Engine;
 
 use function cli\line;
 use function cli\prompt;
+use function Cli\greeting;
 use function General\isEven;
 use function Games\Calculate\getTask as getTaskCalc;
 use function Games\Calculate\getAnswer as getCalcAnswer;
@@ -70,8 +71,9 @@ function getTaskAndAnswer($gameFlag)
     }
 }
 
-function engine($gameFlag, $question, $name)
+function play($gameFlag, $question)
 {
+    $name = greeting();
     printQuestion($question);
     $counter = 0;
     while ($counter < 3) {

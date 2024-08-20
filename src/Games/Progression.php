@@ -2,11 +2,9 @@
 
 namespace Games\Progression;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
-
 use function cli\line;
 use function cli\prompt;
-use function Engine\engine;
+use function Engine\play;
 
 function getTask()
 {
@@ -50,5 +48,5 @@ function startProgression()
 
     $question = 'What number is missing in the progression?';
 
-    engine('prog', $question, $name);
+    play('prog', $question, $name);
 }

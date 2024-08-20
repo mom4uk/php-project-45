@@ -2,11 +2,9 @@
 
 namespace Games\Gcd;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
-
 use function cli\line;
 use function cli\prompt;
-use function Engine\engine;
+use function Engine\play;
 
 function getTaskGcd(int $firstNum, int $secondNum)
 {
@@ -21,5 +19,5 @@ function startGcd()
 
     $question = 'Find the greatest common divisor of given numbers.';
 
-    engine('gcd', $question, $name);
+    play('gcd', $question, $name);
 }

@@ -2,11 +2,9 @@
 
 namespace Games\Calculate;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
-
 use function cli\line;
 use function cli\prompt;
-use function Engine\engine;
+use function Engine\play;
 
 function getTask()
 {
@@ -33,15 +31,4 @@ function getAnswer($equation)
             print_r("Error: Incorrect expression {$expression}");
             return;
     }
-}
-
-function startCalculate()
-{
-    line('Welcome to the brain game!');
-    $name = prompt('May i have your name?');
-    line("hello, %s!", $name);
-
-    $question = 'What is the result of the expression?';
-
-    engine('calc', $question, $name);
 }
