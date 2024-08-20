@@ -73,7 +73,8 @@ function getTaskAndAnswer($gameFlag)
 
 function play($gameFlag, $question)
 {
-    $name = greeting();
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
     printQuestion($question);
     $counter = 0;
     while ($counter < 3) {
