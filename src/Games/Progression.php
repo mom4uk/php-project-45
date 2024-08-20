@@ -10,8 +10,8 @@ use function Engine\engine;
 
 function getTask()
 {
-    $progressionStep = mt_rand(1,15);
-    $result = [mt_rand(1,100)];
+    $progressionStep = mt_rand(1, 15);
+    $result = [mt_rand(1, 100)];
     $progressionLength = 10;
 
     for ($i = 0; $i <= $progressionLength - 2; $i += 1) {
@@ -22,19 +22,6 @@ function getTask()
     $progression = implode(' ', array_replace($result, $randomReplacement));
 
     return $progression;
-}
-
-function getStep(array $coll)
-{
-    $result = 0;
-    for ($i = 0; $i < count($coll) - 1; $i += 1) {
-        if ($coll[$i] === '..' && $i <= 5) {
-            $result = intval($coll[7]) - intval($coll[6]);
-            break;
-        }
-        $result = intval($coll[3]) - intval($coll[2]);
-    }
-    return $result;
 }
 
 function getAnswer(string $progression)

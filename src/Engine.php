@@ -16,7 +16,7 @@ function printQuestion(string $question)
     line($question);
 }
 
-function doExercise ($taskAndAnswer, $name, $counter)
+function doExercise($taskAndAnswer, $name, $counter)
 {
     [$task, $correctAnswer] = $taskAndAnswer;
     $result = 0;
@@ -31,7 +31,7 @@ function doExercise ($taskAndAnswer, $name, $counter)
     } else {
         line('\'%s\' is wrong answer ;(. correct answer was \'%s\'.', $userAnswer, $correctAnswer);
         line('Let\'s try again, %s!', $name);
-        return $result; 
+        return $result;
     }
     if ($counter === $lastIteration) {
         line('Congratulations, %s!', $name);
@@ -40,37 +40,41 @@ function doExercise ($taskAndAnswer, $name, $counter)
     return $result;
 }
 
-function getTaskAndAnswer ($gameFlag) {
-        switch ($gameFlag) {
-            case 'even':
-                $task = mt_rand(1, 1000);
-                $answer =  isEven($task) ? 'yes' : 'no';
-                return [$task, $answer];
-            case 'calc':
-                $task = getTaskCalc();
-                $answer = getCalcAnswer($task);
-                return [$task, $answer];
-            case 'gcd':
-                [$firstNumber, $secondNubmer] = [mt_rand(1,20), mt_rand(1,20)];
-                $task = getTaskGcd($firstNumber, $secondNubmer);
-                $answer = gmp_gcd($firstNumber, $secondNubmer);
-                return [$task, $answer];
-            case 'prog':
-                $task = getProgTask();
-                $answer = getProgAnswer($task); 
-                return [$task, $answer];
-            default:
-                line("Error: Incorrect game flag type: {$gameFlag}");
-                return;
-        }
+function getTaskAndAnswer($gameFlag)
+{
+    switch ($gameFlag) {
+        case 'even':
+            $task = mt_rand(1, 1000);
+            $answer =  isEven($task) ? 'yes' : 'no';
+            return [$task, $answer];
+        case 'calc':
+            $task = getTaskCalc();
+            $answer = getCalcAnswer($task);
+            return [$task, $answer];
+        case 'gcd':
+            [$firstNumber, $secondNubmer] = [mt_rand(1, 20), mt_rand(1, 20)];
+            $task = getTaskGcd($firstNumber, $secondNubmer);
+            $answer = gmp_gcd($firstNumber, $secondNubmer);
+            return [$task, $answer];
+        case 'prog':
+            $task = getProgTask();
+            $answer = getProgAnswer($task);
+            return [$task, $answer];
+        case 'prime':
+            $task = mt_rand(1, 100);
+            $answer = isPrime($task) ? 'yes' : 'no';
+            return [$task, $answer];
+        default:
+            line("Error: Incorrect game flag type: {$gameFlag}");
+            return;
+    }
 }
 
 function engine($gameFlag, $question, $name)
 {
     printQuestion($question);
     $counter = 0;
-    while($counter < 3) {
-
+    while ($counter < 3) {
         $taskAndAnswer = getTaskAndAnswer($gameFlag);
         $exercise = doExercise($taskAndAnswer, $name, $counter);
 

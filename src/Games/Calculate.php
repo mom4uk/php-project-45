@@ -15,7 +15,7 @@ function getTask()
     return implode(' ', [mt_rand(0, 15), $randomExpression, mt_rand(0, 15)]);
 }
 
-function getAnswer ($equation)
+function getAnswer($equation)
 {
     $splitedEquation = explode(' ', $equation);
     [$firstNumber, $expression, $secondNumber] = $splitedEquation;
@@ -45,4 +45,3 @@ function startCalculate()
 
     engine('calc', $question, $name);
 }
-
