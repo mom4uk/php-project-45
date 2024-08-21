@@ -5,9 +5,11 @@ namespace Cli;
 use function cli\line;
 use function cli\prompt;
 
-function greeting()
-{
+function x() {
     echo "Welcome to the Brain Game!\n";
+}
+function greeting()
+{ 
     echo "May I have your name?\n";
     
     $name = trim(fgets(STDIN));
