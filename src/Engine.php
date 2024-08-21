@@ -59,7 +59,7 @@ function getTaskAndAnswer($gameFlag)
             $task = getTaskGcd($firstNumber, $secondNubmer);
             $answer = getGcd($firstNumber, $secondNubmer);
             return [$task, $answer];
-        case 'prog':
+        case 'progression':
             $task = getProgTask();
             $answer = getProgAnswer($task);
             return [$task, $answer];

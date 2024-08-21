@@ -14,4 +14,4 @@ use function Engine\play;
 
 $question = 'What number is missing in the progression?';
 
-play('prog', $question);
+play('progression', $question);

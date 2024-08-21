@@ -13,8 +13,8 @@ brain-calc:
 brain-gcd:
 	./bin/brain-gcd
 
-brain-prog:
-	./bin/brain-prog
+brain-progression:
+	./bin/brain-progression
 
 brain-prime:
 	./bin/brain-prime
