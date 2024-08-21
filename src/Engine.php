@@ -10,6 +10,7 @@ use function Prime\isPrime;
 use function Games\Calculate\getTask as getTaskCalc;
 use function Games\Calculate\getAnswer as getCalcAnswer;
 use function Games\Gcd\getTask as getTaskGcd;
+use function Games\Gcd\getGcd;
 use function Games\Progression\getTask as getProgTask;
 use function Games\Progression\getAnswer as getProgAnswer;
 
@@ -47,7 +48,7 @@ function getTaskAndAnswer($gameFlag)
     switch ($gameFlag) {
         case 'even':
             $task = mt_rand(1, 1000);
-            $answer =  isEven($task) ? 'yes' : 'no';
+            $answer =  isEven($task);
             return [$task, $answer];
         case 'calc':
             $task = getTaskCalc(mt_rand(0, 15), mt_rand(0, 15));
@@ -56,7 +57,7 @@ function getTaskAndAnswer($gameFlag)
         case 'gcd':
             [$firstNumber, $secondNubmer] = [mt_rand(1, 20), mt_rand(1, 20)];
             $task = getTaskGcd($firstNumber, $secondNubmer);
-            $answer = gmp_gcd($firstNumber, $secondNubmer);
+            $answer = getGcd($firstNumber, $secondNubmer);
             return [$task, $answer];
         case 'prog':
             $task = getProgTask();
@@ -74,13 +75,14 @@ function getTaskAndAnswer($gameFlag)
 
 function play($gameFlag, $question)
 {
-    line('Welcome to the Brain Game!');
+    line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
 
     printQuestion($question);
     $counter = 0;
-    while ($counter < 3) {
+    $gameCycles = 3;
+    while ($counter < $gameCycles) {
         $taskAndAnswer = getTaskAndAnswer($gameFlag);
         $exercise = doExercise($taskAndAnswer, $name, $counter);
 

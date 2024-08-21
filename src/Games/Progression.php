@@ -39,14 +39,3 @@ function getAnswer(string $progression)
     }
     return $result;
 }
-
-function startProgression()
-{
-    line('Welcome to the brain game!');
-    $name = prompt('May i have your name?');
-    line("hello, %s!", $name);
-
-    $question = 'What number is missing in the progression?';
-
-    play('prog', $question, $name);
-}
