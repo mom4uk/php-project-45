@@ -12,6 +12,6 @@ if (file_exists($autoloadPath1)) {
 
 use function Engine\play;
 
-$question = 'Answer "yes" if given number is even. Otherwise answer "no".';
+$question = 'Answer "yes" if the number is even, otherwise answer "no"';
 
 play('even', $question);
