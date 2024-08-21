@@ -11,8 +11,5 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function Cli\greeting;
-use function Cli\x;
-
-x();
 
 greeting();
