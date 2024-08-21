@@ -5,7 +5,8 @@ namespace Engine;
 use function cli\line;
 use function cli\prompt;
 use function Cli\run;
-use function General\isEven;
+use function Even\isEven;
+use function Prime\isPrime;
 use function Games\Calculate\getTask as getTaskCalc;
 use function Games\Calculate\getAnswer as getCalcAnswer;
 use function Games\Gcd\getTask as getTaskGcd;
@@ -49,7 +50,7 @@ function getTaskAndAnswer($gameFlag)
             $answer =  isEven($task) ? 'yes' : 'no';
             return [$task, $answer];
         case 'calc':
-            $task = getTaskCalc();
+            $task = getTaskCalc(mt_rand(0, 15), mt_rand(0, 15));
             $answer = getCalcAnswer($task);
             return [$task, $answer];
         case 'gcd':
@@ -73,9 +74,10 @@ function getTaskAndAnswer($gameFlag)
 
 function play($gameFlag, $question)
 {
-    run();
+    line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
+
     printQuestion($question);
     $counter = 0;
     while ($counter < 3) {

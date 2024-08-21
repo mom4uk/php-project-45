@@ -6,11 +6,11 @@ use function cli\line;
 use function cli\prompt;
 use function Engine\play;
 
-function getTask()
+function getTask(int $firstValue, int $secondValue)
 {
     $expression = ['+', '-', '*'];
     $randomExpression = $expression[mt_rand(0, 2)];
-    return implode(' ', [mt_rand(0, 15), $randomExpression, mt_rand(0, 15)]);
+    return implode(' ', [$firstValue, $randomExpression, $secondValue]);
 }
 
 function getAnswer($equation)
