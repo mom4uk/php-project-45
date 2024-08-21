@@ -19,7 +19,7 @@ function printQuestion(string $question)
     line($question);
 }
 
-function doExercise(string $taskAndAnswer, string $name, int $counter)
+function doExercise(array $taskAndAnswer, string $name, int $counter)
 {
     [$task, $correctAnswer] = $taskAndAnswer;
     $result = 0;
