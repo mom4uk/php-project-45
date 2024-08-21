@@ -13,7 +13,7 @@ function getTask(int $firstValue, int $secondValue)
     return implode(' ', [$firstValue, $randomExpression, $secondValue]);
 }
 
-function getAnswer($equation)
+function getAnswer(string $equation)
 {
     $splitedEquation = explode(' ', $equation);
     [$firstNumber, $expression, $secondNumber] = $splitedEquation;

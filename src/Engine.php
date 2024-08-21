@@ -19,7 +19,7 @@ function printQuestion(string $question)
     line($question);
 }
 
-function doExercise($taskAndAnswer, $name, $counter)
+function doExercise(string $taskAndAnswer, string $name, int $counter)
 {
     [$task, $correctAnswer] = $taskAndAnswer;
     $result = 0;
@@ -43,7 +43,7 @@ function doExercise($taskAndAnswer, $name, $counter)
     return $result;
 }
 
-function getTaskAndAnswer($gameFlag)
+function getTaskAndAnswer(string $gameFlag)
 {
     switch ($gameFlag) {
         case 'even':
@@ -73,7 +73,7 @@ function getTaskAndAnswer($gameFlag)
     }
 }
 
-function play($gameFlag, $question)
+function play(string $gameFlag, string $question)
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
