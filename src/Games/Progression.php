@@ -26,14 +26,15 @@ function getAnswer(string $progression)
 {
     $coll = explode(' ', $progression);
     $result = 0;
-    for ($i = 0; $i < count($coll) - 1; $i += 1) {
+    for ($i = 0; $i <= count($coll) - 1; $i += 1) {
+        if ($coll[9] === '..' && $i === 9) {
+            $step = intval($coll[$i - 1]) - intval($coll[$i - 2]);
+            $result = $coll[$i - 1] + $step;
+            break;
+        }
         if ($coll[$i] === '..' && $i <= 5) {
             $step = intval($coll[$i + 2]) - intval($coll[$i + 1]);
             $result = $coll[$i + 1] - $step;
-            break;
-        } elseif ($coll[$i] === '..' && $i >= 5) {
-            $step = intval($coll[$i - 1]) - intval($coll[$i - 2]);
-            $result = $coll[$i - 1] + $step;
             break;
         }
     }
