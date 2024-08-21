@@ -29,11 +29,11 @@ function getAnswer(string $progression)
     for ($i = 0; $i <= count($coll) - 1; $i += 1) {
         if ($coll[$i] === '..' && $i <= 5) {
             $step = intval($coll[$i + 2]) - intval($coll[$i + 1]);
-            $result = $coll[$i + 1] - $step;
+            $result = intval($coll[$i + 1]) - $step;
             break;
         } elseif ($coll[$i] === '..' && $i >= 5) {
             $step = intval($coll[$i - 1]) - intval($coll[$i - 2]);
-            $result = $coll[$i - 1] + $step;
+            $result = intval($coll[$i - 1]) + $step;
             break;
         }
     }
