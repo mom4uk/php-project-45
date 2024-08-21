@@ -4,7 +4,7 @@ namespace Engine;
 
 use function cli\line;
 use function cli\prompt;
-use function Cli\greeting;
+use function Cli\run;
 use function General\isEven;
 use function Games\Calculate\getTask as getTaskCalc;
 use function Games\Calculate\getAnswer as getCalcAnswer;
@@ -73,7 +73,7 @@ function getTaskAndAnswer($gameFlag)
 
 function play($gameFlag, $question)
 {
-    greeting();
+    run();
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     printQuestion($question);
