@@ -31,3 +31,5 @@ To launch games, run the commands:
 `make brain-gcd` - launches the Greatest Common Divisor game.
 `make brain-progression` - launches the Arithmetic Progression game.
 `make brain-prime` - launches the game "Is the number prime?"
+
+[![asciicast](https://asciinema.org/a/2IKI0cGsNyHauVGXWKjBzHR4j.svg)](https://asciinema.org/a/2IKI0cGsNyHauVGXWKjBzHR4j)
