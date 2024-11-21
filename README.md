@@ -32,4 +32,6 @@ To launch games, run the commands:
 `make brain-progression` - launches the Arithmetic Progression game.
 `make brain-prime` - launches the game "Is the number prime?"
 
+## Sample
+
 [![asciicast](https://asciinema.org/a/2IKI0cGsNyHauVGXWKjBzHR4j.svg)](https://asciinema.org/a/2IKI0cGsNyHauVGXWKjBzHR4j)
