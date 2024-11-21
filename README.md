@@ -27,9 +27,13 @@ $ make install
 To launch games, run the commands:
 
 `make brain-even` - launches the "Parity Check" game.
+
 `make brain-calc` - launches the Calculator game.
+
 `make brain-gcd` - launches the Greatest Common Divisor game.
+
 `make brain-progression` - launches the Arithmetic Progression game.
+
 `make brain-prime` - launches the game "Is the number prime?"
 
 ## Sample
